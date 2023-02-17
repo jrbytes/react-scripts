@@ -24,94 +24,39 @@ const prompts = [
   }
 ]
 
+const setGenerator = (plop, name, _path) => {
+  plop.setGenerator(name, {
+    description: `Create a ${name}`,
+    prompts,
+    actions: function (data) {
+      const actions = []
+
+      const defaultActions = [
+        styles(_path),
+        test(_path),
+      ]
+
+      if (data.type === Component.FULL) {
+        actions.push(
+          ...defaultActions,
+          componentFull(_path)
+        )
+      }
+
+      if (data.type === Component.SIMPLE) {
+        actions.push(
+          ...defaultActions,
+          component(_path)
+        )
+      }
+
+      return actions
+    }
+  })
+}
+
 module.exports = (plop) => {
-  plop.setGenerator('Component', {
-    description: 'Create a component',
-    prompts,
-    actions: function (data) {
-      const actions = []
-      const _path = '../src/components/'
-
-      const defaultActions = [
-        styles(_path),
-        test(_path),
-      ]
-
-      if (data.type === Component.FULL) {
-        actions.push(
-          ...defaultActions,
-          componentFull(_path)
-        )
-      }
-
-      if (data.type === Component.SIMPLE) {
-        actions.push(
-          ...defaultActions,
-          component(_path)
-        )
-      }
-
-      return actions
-    }
-  })
-
-  plop.setGenerator('Template', {
-    description: 'Create a template',
-    prompts,
-    actions: function (data) {
-      const actions = []
-      const _path = '../src/templates/'
-
-      const defaultActions = [
-        styles(_path),
-        test(_path),
-      ]
-
-      if (data.type === Component.FULL) {
-        actions.push(
-          ...defaultActions,
-          componentFull(_path)
-        )
-      }
-
-      if (data.type === Component.SIMPLE) {
-        actions.push(
-          ...defaultActions,
-          component(_path)
-        )
-      }
-
-      return actions
-    }
-  })
-
-  plop.setGenerator('Pages', {
-    description: 'Create a page',
-    prompts,
-    actions: function (data) {
-      const actions = []
-      const _path = '../src/pages/'
-
-      const defaultActions = [
-        styles(_path),
-        test(_path),
-      ]
-
-      if (data.type === Component.FULL) {
-        actions.push(
-          ...defaultActions,
-          componentFull(_path)
-        )
-      }
-
-      if (data.type === Component.SIMPLE) {
-        actions.push(
-          ...defaultActions,
-          component(_path)
-        )
-      }
-
-      return actions
-    }
-  })
+  setGenerator(plop, 'Component', '../src/components/')
+  setGenerator(plop, 'Template', '../src/templates/')
+  setGenerator(plop, 'Page', '../src/pages/')
 }
