@@ -1,3 +1,5 @@
+import { FiraCodeFontWeights } from './global'
+
 export default {
   grid: {
     container: '110rem',
@@ -8,11 +10,17 @@ export default {
     radius: '0.4rem',
   },
   font: {
-    family: '"Roboto", sans-serif',
-    light: 300,
-    normal: 400,
-    semiBold: 500,
-    bold: 600,
+    title: {
+      family: '"League Gothic", sans-serif',
+    },
+    text: {
+      family: '"Fira Sans", sans-serif',
+      weight: {
+        thin: FiraCodeFontWeights.Thin,
+        regular: FiraCodeFontWeights.Regular,
+        bold: FiraCodeFontWeights.Bold,
+      },
+    },
     sizes: {
       xsmall: '1.2rem',
       small: '1.4rem',
