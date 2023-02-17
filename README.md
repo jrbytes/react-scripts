@@ -1,4 +1,4 @@
-# React Scripts
+# React Tips
 
 - tests (vitest)
 - linting (eslint, prettier)
