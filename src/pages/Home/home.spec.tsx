@@ -8,10 +8,12 @@ describe('<Home />', () => {
   it('should be able to render the home page', () => {
     const { container } = renderWithTheme(<Home />)
 
-    expect(screen.getByRole('heading', { name: /home/i })).toBeInTheDocument()
+    expect(
+      screen.getByText(/react tips/i, { selector: 'aside' })
+    ).toBeInTheDocument()
     expect(screen.getByText(/hello world/i)).toBeInTheDocument()
-    expect(container.firstChild).toHaveStyle({
-      maxWidth: theme.grid.container,
+    expect(container).toHaveStyle({
+      backgroundColor: theme.grid.container,
     })
   })
 })
