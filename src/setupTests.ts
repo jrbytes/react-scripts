@@ -1,5 +1,10 @@
-/* eslint-disable import/no-extraneous-dependencies */
+import 'jest-styled-components'
+import { cleanup } from '@testing-library/react'
 import matchers from '@testing-library/jest-dom/matchers'
 import { expect } from 'vitest'
 
 expect.extend(matchers)
+
+afterEach(() => {
+  cleanup()
+})
