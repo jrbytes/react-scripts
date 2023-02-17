@@ -73,7 +73,8 @@ export default createGlobalStyle`
     body {
       font-family: ${theme.font.text.family};
       font-size: ${theme.font.sizes.medium};
-      background-color: ${theme.colors.mainBg};
+      background-color: ${theme.colors.background};
+      color: ${theme.colors.foreground};
     }
   `}
 `
