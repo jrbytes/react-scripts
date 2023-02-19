@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 import laptopTyping from '../../assets/images/laptop-typing.jpg'
 
+export const LoadImageCss = laptopTyping
+
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
