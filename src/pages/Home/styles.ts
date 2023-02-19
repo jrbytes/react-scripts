@@ -14,6 +14,7 @@ export const Wrapper = styled.div`
       height: 700px;
       display: grid;
       grid-template-columns: 1fr 1fr;
+      box-shadow: ${theme.boxShadow.stronger};
 
       aside {
         background: url(${laptopTyping}) no-repeat center center / cover;

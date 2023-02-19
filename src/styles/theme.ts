@@ -64,4 +64,12 @@ export default {
     default: '0.3s ease-in-out',
     fast: '0.1s ease-in-out',
   },
+  boxShadow: {
+    default: '0 0.5rem 1rem rgba(0, 0, 0, 0.2)',
+    softer: '0 5px 10px rgba(0, 0, 0, 0.1)',
+    stronger: '0 20px 40px rgba(0, 0, 0, 0.4)',
+    diagonal: '10px 10px 20px rgba(0, 0, 0, 0.3)',
+    smallerBlur: '0 10px 10px rgba(0, 0, 0, 0.2)',
+    smallerSpread: '0 10px 20px -10px rgba(0, 0, 0, 0.3)',
+  },
 } as const
