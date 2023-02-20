@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import * as S from './styles'
+import { Spinner } from '../../components/Spinner'
 
 export function Home() {
   const [loadImage, setLoadImage] = useState(false)
@@ -19,15 +20,21 @@ export function Home() {
   }
 
   return (
-    <S.Wrapper>
-      <motion.div
-        initial="hidden"
-        animate={loadImage ? 'visible' : 'hidden'}
-        variants={variants}
-      >
-        <aside>React Tips</aside>
-        <main>Hello World</main>
-      </motion.div>
-    </S.Wrapper>
+    <div>
+      {!loadImage ? (
+        <Spinner />
+      ) : (
+        <S.Wrapper>
+          <motion.div
+            initial="hidden"
+            animate={loadImage ? 'visible' : 'hidden'}
+            variants={variants}
+          >
+            <aside>React Tips</aside>
+            <main>Hello World</main>
+          </motion.div>
+        </S.Wrapper>
+      )}
+    </div>
   )
 }
