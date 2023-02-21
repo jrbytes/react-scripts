@@ -54,6 +54,7 @@ export function Spinner() {
         alignItems: 'center',
         justifyContent: 'center',
       }}
+      aria-label="loading"
     >
       <motion.div
         style={container}
