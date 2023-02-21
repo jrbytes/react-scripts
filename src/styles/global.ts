@@ -1,8 +1,4 @@
 import { createGlobalStyle, css } from 'styled-components'
-import leagueGothic from '../assets/fonts/league-gothic-regular.ttf'
-import firaSansThin from '../assets/fonts/fira-sans-thin.ttf'
-import firaSansRegular from '../assets/fonts/fira-sans-regular.ttf'
-import firaSansBold from '../assets/fonts/fira-sans-bold.ttf'
 
 export enum FiraCodeFontWeights {
   Thin = 100,
@@ -11,29 +7,6 @@ export enum FiraCodeFontWeights {
 }
 
 export default createGlobalStyle`
-  @font-face {
-    font-family: 'League Gothic';
-    src: local('LeagueGothic-Regular-VariableFont_wdth'), url(${leagueGothic}) format('truetype');
-  }
-
-  @font-face {
-    font-family: 'Fira Sans';
-    src: local('FiraSans-Thin'), url(${firaSansThin}) format('truetype');
-    font-weight: ${FiraCodeFontWeights.Thin};
-  }
-
-  @font-face {
-    font-family: 'Fira Sans';
-    src: local('FiraSans-Regular'), url(${firaSansRegular}) format('truetype');
-    font-weight: ${FiraCodeFontWeights.Regular};
-  }
-
-  @font-face {
-    font-family: 'Fira Sans';
-    src: local('FiraSans-Bold'), url(${firaSansBold}) format('truetype');
-    font-weight: ${FiraCodeFontWeights.Bold};
-  }
-
   h1, h2, h3, h4, h5, h6 {
     font-family: 'League Gothic', sans-serif;
   }
