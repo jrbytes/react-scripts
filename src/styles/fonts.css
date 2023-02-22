@@ -1,0 +1,22 @@
+@font-face {
+  font-family: 'League Gothic';
+  src: local('LeagueGothic-Regular-VariableFont_wdth'), url('../assets/fonts/league-gothic-regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: local('FiraSans-Thin'), url('../assets/fonts/fira-sans-thin.ttf') format('truetype');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: local('FiraSans-Regular'), url('../assets/fonts/fira-sans-regular.ttf') format('truetype');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  src: local('FiraSans-Bold'), url('../assets/fonts/fira-sans-bold.ttf') format('truetype');
+  font-weight: 700;
+}
