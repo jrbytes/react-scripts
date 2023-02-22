@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
+import { Spinner } from 'components/Spinner'
 import * as S from './styles'
-import { Spinner } from '../../components/Spinner'
 
 export function Home() {
   const [loadImage, setLoadImage] = useState(false)

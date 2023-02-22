@@ -1,8 +1,8 @@
 import { screen } from '@testing-library/react'
 
+import theme from 'styles/theme'
 import { renderWithTheme } from '../../utils/helpers'
 import { Home } from '.'
-import theme from '../../styles/theme'
 
 describe('<Home />', () => {
   it('should be able to render the home page', async () => {

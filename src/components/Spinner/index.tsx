@@ -1,5 +1,5 @@
 import { motion, Transition } from 'framer-motion'
-import theme from '../../styles/theme'
+import theme from 'styles/theme'
 
 const loadingDotStyle = {
   display: 'block',

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import laptopTyping from '../../assets/images/laptop-typing.jpg'
+import laptopTyping from 'assets/images/laptop-typing.jpg'
 
 export const LoadImageCss = laptopTyping
 
