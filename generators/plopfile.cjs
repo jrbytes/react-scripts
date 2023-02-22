@@ -1,3 +1,4 @@
+const inquirer = require('inquirer')
 const {
   component,
   componentFull,
@@ -5,30 +6,38 @@ const {
   test,
 } = require('./pathVariables.cjs')
 
-const Component = {
-  FULL: 'Complete component with typing and function?',
-  SIMPLE: 'Simple component?'
+const COMPONENT = {
+  FULL: 'FULL',
+  SIMPLE: 'SIMPLE'
 }
 
-const prompts = [
+const folderNamePrompt = inquirer.prompt([
   {
-    type: 'input',
-    name: 'name',
-    message: "What's your component name?"
-  },
-  {
-    type: 'list',
-    name: 'type',
-    message: 'What type of component is it?',
-    choices: [Component.FULL, Component.SIMPLE]
+    type: 'text',
+    name: 'folder',
+    message: "What's the folder name?"
   }
-]
+])
 
-const setGenerator = (plop, name, _path) => {
-  plop.setGenerator(name, {
-    description: `Create a ${name}`,
-    prompts,
-    actions: function (data) {
+const setGenerator = (plop, folder) => {
+  const _path = `../src/${folder.toLowerCase()}/`
+
+  plop.setGenerator(folder, {
+    description: `Create a ${folder}`,
+    prompts: [
+      {
+        type: 'input',
+        name: 'name',
+        message: "What's your component name?"
+      },
+      {
+        type: 'list',
+        name: 'type',
+        message: 'What type of component is it?',
+        choices: [COMPONENT.FULL, COMPONENT.SIMPLE]
+      }
+    ],
+    actions: ({ type }) => {
       const actions = []
 
       const defaultActions = [
@@ -36,14 +45,14 @@ const setGenerator = (plop, name, _path) => {
         test(_path),
       ]
 
-      if (data.type === Component.FULL) {
+      if (type === COMPONENT.FULL) {
         actions.push(
           ...defaultActions,
           componentFull(_path)
         )
       }
 
-      if (data.type === Component.SIMPLE) {
+      if (type === COMPONENT.SIMPLE) {
         actions.push(
           ...defaultActions,
           component(_path)
@@ -55,8 +64,7 @@ const setGenerator = (plop, name, _path) => {
   })
 }
 
-module.exports = (plop) => {
-  setGenerator(plop, 'Component', '../src/components/')
-  setGenerator(plop, 'Template', '../src/templates/')
-  setGenerator(plop, 'Page', '../src/pages/')
+module.exports = async (plop) => {
+  const { folder } = await folderNamePrompt
+  setGenerator(plop, folder)
 }
