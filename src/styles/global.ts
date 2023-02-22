@@ -1,5 +1,4 @@
 import { createGlobalStyle, css } from 'styled-components'
-import './fonts.css'
 
 export enum FiraCodeFontWeights {
   Thin = 100,
