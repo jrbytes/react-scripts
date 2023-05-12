@@ -27,5 +27,6 @@ module.exports = {
     'react/jsx-no-constructed-context-values': 0,
     'import/no-extraneous-dependencies': 0,
     'react/jsx-props-no-spreading': 0,
+    '@typescript-eslint/no-unused-expressions': 0,
   },
 }
