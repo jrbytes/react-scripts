@@ -12,14 +12,28 @@ export default createGlobalStyle`
   }
 
   button {
+    display: flex;
     cursor: pointer;
+    padding: 0.4rem 1rem;
+    font-size: 1.6rem;
+    font-family: 'Fira Sans';
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    border: 0.2rem solid #fff;
+    color: #fff;
+    background-color: transparent;
+    transition: 0.3s;
+
+    :hover {
+      background-color: #128eac;
+      border: 0.2rem solid #128eac;
+      text-shadow: 1px 1px 2px black;
+    }
   }
 
   a,
-  button,
   svg {
-    transition: opacity 0.1s;
-
     &:hover {
       opacity: 0.9;
     }
