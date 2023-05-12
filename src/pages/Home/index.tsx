@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Spinner } from 'components/Spinner'
+import { Button } from 'components/Button'
 import * as S from './styles'
 
 export function Home() {
@@ -30,8 +31,10 @@ export function Home() {
             animate={loadImage ? 'visible' : 'hidden'}
             variants={variants}
           >
-            <aside>React Tips</aside>
-            <main>Hello World</main>
+            <aside>TypeScript Tips</aside>
+            <main>
+              <Button>Open Box</Button>
+            </main>
           </motion.div>
         </S.Wrapper>
       )}
