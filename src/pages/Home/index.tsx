@@ -33,7 +33,7 @@ export function Home() {
           >
             <aside>TypeScript Tips</aside>
             <main>
-              <Button>Open Box</Button>
+              <Button buttonText="Open Box" />
             </main>
           </motion.div>
         </S.Wrapper>

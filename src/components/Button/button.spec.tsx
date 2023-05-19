@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react'
+import { AiFillAlert } from 'react-icons/ai'
 
 import { Button } from '.'
 import { ButtonProps } from './types'
@@ -14,5 +15,11 @@ const makeSut = ({ icon, buttonText }: SutParams): SutReturn => {
 describe('Button Component', () => {
   it('should be able to render the button component', async () => {
     expect(makeSut({ buttonText: 'Ipsum' }).button).toBeDefined()
+  })
+
+  it('should be able to render the button component with icon', async () => {
+    expect(makeSut({ icon: <AiFillAlert /> }).button.innerHTML).toContain(
+      '<svg '
+    )
   })
 })
